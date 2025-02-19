@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/testapi" name="testapi" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST" uri-template="/">
+        <inSequence>
+            <datamapper config="gov:/datamapper/testdm/testdm.dmc"
+                inputSchema="gov:/datamapper/testdm/testdm_inputSchema.json"
+                outputSchema="gov:/datamapper/testdm/testdm_outputSchema.json" />
+            <respond />
+        </inSequence>
+        <faultSequence>
+        </faultSequence>
+    </resource>
+</api>
